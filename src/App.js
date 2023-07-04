@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -7,8 +7,9 @@ import {
   Dimensions,
   StatusBar,
 } from 'react-native';
-import {Awan} from './assets';
-import OvoComponent from './component/ovoComponent/OvoComponent';
+import { Awan } from './assets';
+import { FiturUtama, OvoComponent } from './component';
+
 
 class App extends Component {
   render() {
@@ -26,7 +27,10 @@ class App extends Component {
             <Text style={styles.textOvo}>Ovo Balance</Text>
             <Text style={styles.textOvo}>Rp. 100.000</Text>
           </View>
-          <OvoComponent/>
+          <OvoComponent />
+        </View>
+        <View style={{ marginHorizontal: 20 }}>
+          <FiturUtama />
         </View>
       </View>
     );
