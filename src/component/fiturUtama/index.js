@@ -3,7 +3,6 @@ import {View, StyleSheet} from 'react-native';
 import { Bike, Car, Doctor, Food, More, Pulsa, Send, Subcribe } from '../../assets';
 import SubFeatureUtama from './SubFeatureUtama';
 
-
 const FiturUtama = () => {
   return (
     <View style={styles.wrappertFiturUtama}>

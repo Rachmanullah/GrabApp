@@ -6,15 +6,16 @@ import {
   StyleSheet,
   Dimensions,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import { Awan } from './assets';
-import { FiturUtama, OvoComponent } from './component';
+import { FiturUtama, OvoComponent, PromoItems } from './component';
 
 
 class App extends Component {
   render() {
     return (
-      <View>
+      <ScrollView>
         <StatusBar
           barStyle="dark-content"
           translucent
@@ -32,7 +33,11 @@ class App extends Component {
         <View style={{ marginHorizontal: 20 }}>
           <FiturUtama />
         </View>
-      </View>
+        <View style={styles.divinder}></View>
+        <View style={{ marginHorizontal: 20 }}>
+          <PromoItems/>
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -75,4 +80,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#383838',
   },
+  divinder:{
+    width: windowWidth,
+    height: 15,
+    backgroundColor: '#ededed',
+    marginVertical: 15,
+  }
 });

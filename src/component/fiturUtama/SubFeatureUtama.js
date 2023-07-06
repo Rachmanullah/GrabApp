@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
+
 class SubFeatureUtama extends Component {
     render() {
         return (
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
             height: 5,
         },
         shadowRadius: 7.50,
-        elevation: 1,
+        // elevation: 1,
         width: '20%',
         marginHorizontal: 2,
         marginBottom: 15,
