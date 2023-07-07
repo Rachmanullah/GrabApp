@@ -7,6 +7,8 @@ import NavAccountActive from './nav-account-active.jpg'
 import NavAccount from './nav-account.jpg'
 import NavHomeActive from './nav-home-active.jpg'
 import NavHome from './nav-home.jpg'
+import NavActivity from './nav-activity.jpg'
+import NavActivityActive from './nav-activity-active.jpg'
 import NavInboxActive from './nav-inbox-active.jpg'
 import NavInbox from './nav-inbox.jpg'
 import NavPaymentActive from './nav-payment-active.jpg'
@@ -28,6 +30,8 @@ export {
     NavAccountActive,
     NavHome,
     NavHomeActive,
+    NavActivity,
+    NavActivityActive,
     NavInbox,
     NavInboxActive,
     NavPayment,
