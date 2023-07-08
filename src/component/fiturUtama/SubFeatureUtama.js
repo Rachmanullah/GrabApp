@@ -5,7 +5,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 class SubFeatureUtama extends Component {
     render() {
         return (
-            <TouchableOpacity style={styles.buttonSubFeatureUtama}>
+            <TouchableOpacity onPress={this.props.onPress} style={styles.buttonSubFeatureUtama}>
                 <View>
                     <Image style={styles.FeatureUtamaIcon} source={this.props.Image} />
                     <Text style={styles.FeatureUtamaText}>{this.props.Title}</Text>

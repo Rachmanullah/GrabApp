@@ -5,11 +5,13 @@ import Beras from './beras.jpeg'
 import Garam from './garam.jpeg'
 import Kecap from './kecap.jpeg'
 import Minyak from './minyak.jpeg'
+import Logo from './grab.jpeg'
 export {
     Awan, 
     Pay,
     Gula,
     Garam,
+    Logo,
     Beras,
     Kecap,
     Minyak

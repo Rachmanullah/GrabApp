@@ -3,4 +3,5 @@ import Activity from "./Activity"
 import Inbox from "./Inbox"
 import Payment from "./Payment"
 import Account from "./Account"
-export{Home, Activity, Inbox, Payment, Account}
+import Food from "./Food"
+export{Home, Activity, Inbox, Payment, Account, Food}

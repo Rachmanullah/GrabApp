@@ -27,7 +27,7 @@ class Home extends Component {
                         <Text style={styles.textOvo}>Ovo Balance</Text>
                         <Text style={styles.textOvo}>Rp. 100.000</Text>
                     </View>
-                    <OvoComponent />
+                    <OvoComponent/>
                 </View>
                 <View style={{ marginHorizontal: 20 }}>
                     <FiturUtama />

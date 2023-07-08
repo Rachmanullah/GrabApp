@@ -2,11 +2,13 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import { Bike, Car, Doctor, Food, More, Pulsa, Send, Subcribe } from '../../assets';
 import SubFeatureUtama from './SubFeatureUtama';
+import { useNavigation } from '@react-navigation/native';
 
 const FiturUtama = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.wrappertFiturUtama}>
-        <SubFeatureUtama Image={Food} Title="Food"/>
+        <SubFeatureUtama onPress={()=> navigation.navigate('Food')} Image={Food} Title="Food"/>
         <SubFeatureUtama Image={Bike} Title="Bike"/>
         <SubFeatureUtama Image={Car} Title="Car"/>
         <SubFeatureUtama Image={Send} Title="Delivery"/>
