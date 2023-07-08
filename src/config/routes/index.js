@@ -4,14 +4,12 @@ import {
     Image
 } from 'react-native';
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { Account, Activity, Food, Home, Inbox, Payment } from '../../pages';
+import { Account, Activity, Food, Home, Inbox, Login, Payment, VerifikasiOtp } from '../../pages';
 import { NavAccount, NavAccountActive, NavActivity, NavActivityActive, NavHome, NavHomeActive, NavInbox, NavInboxActive, NavPayment, NavPaymentActive } from '../../assets';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const MaterialBottom = createMaterialBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-
-
 
 const MainApp = () => {
     return (
@@ -94,9 +92,11 @@ const MainApp = () => {
 
 const MyStack = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen name='MainApp' component={MainApp} options={{ headerShown: false }} />
             <Stack.Screen name='Food' component={Food} options={{ headerShown: true }} />
+            <Stack.Screen name='Login' component={Login} options={{ headerShown: false }} />
+            <Stack.Screen name='ValidasiOTP' component={VerifikasiOtp} options={{title: 'Verifikasi OTP',headerTitleAlign:'center', headerShown: true , headerBackVisible: false}} />
         </Stack.Navigator>
     )
 }

@@ -4,4 +4,6 @@ import Inbox from "./Inbox"
 import Payment from "./Payment"
 import Account from "./Account"
 import Food from "./Food"
-export{Home, Activity, Inbox, Payment, Account, Food}
+import Login from "./Account/login"
+import VerifikasiOtp from "./Account/VerifikasiOtp"
+export{Home, Activity, Inbox, Payment, Account, Food, Login, VerifikasiOtp}
