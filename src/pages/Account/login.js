@@ -1,22 +1,43 @@
-import { StyleSheet, Text, View, StatusBar, TextInput, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import { StyleSheet, Text, View, StatusBar, TextInput } from 'react-native'
+import React, {useState } from 'react'
 import { TouchableRipple } from 'react-native-paper'
-import { useNavigation } from "@react-navigation/native";
 
-const Login = () => {
-    const navigation = useNavigation()
+
+const Login = ({ navigation }) => {
     const [displaySosmed, setDisplaySosmed] = useState("flex")
     const [noHp, setNoHP] = useState("")
     const [actionButton, setActionButton] = useState("Or Continue With a Social Media")
+
     const proses = () => {
-        if (noHp.length >= 12 && noHp.length <= 13 && noHp.substr(0, 1) == '0' && !isNaN(noHp)) {
-            navigation.navigate('ValidasiOTP', {noHp, kodeOTP: 12345})
+        //asumsi call API sms gateway untuk sms
+        try {
+            fetch('https://reqres.in/api/login', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: 'eve.holt@reqres.in',
+                    password: 'cityslicka'
+                })
+            })
+                .then((Response) => Response.json())
+                .then((Responsejson) => {
+                    if (noHp.length >= 12 && noHp.length <= 13 && noHp.substr(0, 1) == '0' && !isNaN(noHp)) {
+                        navigation.navigate('ValidasiOTP', { noHp, kodeOTP: 12345 })
+                        setNoHP("")
+                    }
+                })
+        } catch (error) {
+            console.warn(error)
         }
     }
+
     return (
         <View style={{ flex: 1, backgroundColor: '#09AB54' }}>
             <StatusBar backgroundColor='#09AB54' />
-            <View style={{ marginHorizontal: 10, marginTop: 100, flex: 1, alignItems: 'center'}}>
+            <View style={{ marginHorizontal: 10, marginTop: 100, flex: 1, alignItems: 'center' }}>
                 <Text style={{ fontSize: 50, color: 'white', marginTop: 20, }}>Grab</Text>
                 <Text style={{ fontSize: 25, color: 'white', marginTop: 80, }}>Welcome</Text>
                 <Text style={{ fontSize: 15, color: 'white', marginTop: 5, }}>Enter Your Mobile Number To Continue</Text>
@@ -38,15 +59,15 @@ const Login = () => {
                     />
                 </View>
             </View>
-            <TouchableRipple 
-            style={{
-                alignItems: 'center',
-                backgroundColor: actionButton == 'Continue' ? 'cyan' : '#09AB54',
-                paddingVertical: actionButton == 'Continue' ? 15 : 0,
-            }}
-            onPress={() => proses()}
+            <TouchableRipple
+                style={{
+                    alignItems: 'center',
+                    backgroundColor: actionButton == 'Continue' ? 'cyan' : '#09AB54',
+                    paddingVertical: actionButton == 'Continue' ? 15 : 0,
+                }}
+                onPress={() => proses()}
             >
-                <Text style={{ fontSize: actionButton == 'Continue' ? 20 :15, color: actionButton == 'Continue' ? 'black' : 'white', }}>{actionButton}</Text>
+                <Text style={{ fontSize: actionButton == 'Continue' ? 20 : 15, color: actionButton == 'Continue' ? 'black' : 'white', }}>{actionButton}</Text>
             </TouchableRipple>
             <View style={{ display: displaySosmed, height: 90, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                 <TouchableRipple style={{ backgroundColor: '#2166b0', width: 110, height: 50, justifyContent: 'center', elevation: 5 }}>
